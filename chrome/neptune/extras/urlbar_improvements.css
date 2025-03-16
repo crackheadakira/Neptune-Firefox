@@ -1,0 +1,15 @@
+/* Makes the search results have same color as input */
+/* Search results div */
+.urlbarView {
+    background: var(--neptune-toolbar-background) !important;
+    color: var(--FieldText);
+}
+
+/* Centers the search text, stops jarring transition between searching url & current url */
+@media (-moz-bool-pref: "sidebar.verticalTabs") {
+    #urlbar>.urlbar-input-container>.urlbar-input-box>.urlbar-input {
+        #urlbar:is([focused], [open]) & {
+            text-align: center !important;
+        }
+    }
+}

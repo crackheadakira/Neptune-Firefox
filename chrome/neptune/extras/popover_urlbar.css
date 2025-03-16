@@ -1,0 +1,22 @@
+/* Taken from shimmer, only works on sidebar */
+
+@media (-moz-bool-pref: "sidebar.verticalTabs") {
+
+    /* Floating URL bar when typing in */
+    #urlbar[breakout-extend] {
+        position: fixed !important;
+        margin-top: 12vh !important;
+        background: var(--neptune-toolbar-background) !important;
+        /*backdrop-filter: blur(8px) !important;*/
+        /*border-radius: 20px;*/
+    }
+
+    /* Transitions for URL bar */
+    #urlbar[breakout-extend] {
+        transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    }
+
+    #urlbar {
+        transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    }
+}
