@@ -405,7 +405,7 @@
 
 		&:is(:checked, [checked="true"]) {
 			background-color: var(--theme-primary-color) !important;
-			background-image: url("neptune/icons/check.svg") !important;
+			background-image: url("../icons/check.svg") !important;
 			border: none;
 		}
 	}
@@ -421,7 +421,7 @@
 
 		&:is(:checked, [selected="true"]) {
 			background-color: var(--theme-primary-color) !important;
-			background-image: url("neptune/icons/radio.svg");
+			background-image: url("../icons/radio.svg");
 			border: none;
 		}
 	}
@@ -497,14 +497,6 @@
 }
 
 @-moz-document url("about:home"), url("about:newtab"), url("about:welcome"), url("about:privatebrowsing") {
-	body {
-		background: url("neptune/image/Abstract_Dreamscapes_Light.png") center/cover fixed !important;
-
-		@media (prefers-color-scheme: dark) {
-			background: url("neptune/image/Abstract_Dreamscapes_Dark.png") center/cover fixed !important;
-		}
-	}
-
 	.non-collapsible-section {
 		padding: 0 !important;
 
@@ -793,7 +785,7 @@
 
 		.personalize-button {
 			-moz-context-properties: fill, fill-opacity !important;
-			background-image: url("neptune/icons/settings.svg") !important;
+			background-image: url("../icons/settings.svg") !important;
 			background-color: transparent !important;
 			padding: 0 !important;
 			background-size: 28px !important;
@@ -955,7 +947,7 @@
 	}
 
 	.top-site-button[href*="github.com"] .top-site-icon {
-		background-image: url("neptune/cards/github.svg") !important;
+		background-image: url("../cards/github.svg") !important;
 	}
 
 	.top-site-button[href*="youtube.com"] .top-site-icon {

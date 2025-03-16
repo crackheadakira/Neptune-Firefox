@@ -1,0 +1,50 @@
+/* Removes padding on left-side of toolbox, as controls would be on right */
+@media (-moz-platform: linux) or (-moz-platform: windows) {
+    #navigator-toolbox {
+        #nav-bar {
+            padding-top: var(--theme-browser-toolbox-padding) !important;
+            padding-bottom: var(--theme-browser-toolbox-padding) !important;
+            padding-left: 5px !important;
+            padding-right: 0px !important;
+        }
+    }
+
+    @media not (-moz-bool-pref: "sidebar.verticalTabs") {
+        #navigator-toolbox {
+            padding-right: calc(92px - var(--toolbar-start-end-padding) / 2) !important;
+        }
+
+        .titlebar-buttonbox-container {
+            position: absolute;
+            inset: var(--theme-browser-toolbox-padding) 0px var(--theme-browser-toolbox-padding) auto;
+
+            :root[inFullscreen] & {
+                display: none !important;
+            }
+        }
+
+        #PanelUI-menu-button {
+            inset-inline-end: calc(
+                var(--toolbar-start-end-padding) +
+                    var(--toolbarbutton-outer-padding) +
+                    100px - var(--toolbar-start-end-padding) / 2
+            );
+        }
+
+        #unified-extensions-button {
+            inset-inline-end: calc(
+                2 * var(--tab-min-height) + 3 * var(--toolbar-start-end-padding) +
+                    var(--toolbarbutton-outer-padding) +
+                    100px - var(--toolbar-start-end-padding) / 2
+            );
+        }
+
+        #tabs-newtab-button, #new-tab-button {
+            inset-inline-end: calc(
+                var(--tab-min-height) + 2 * var(--toolbar-start-end-padding) +
+                    var(--toolbarbutton-outer-padding) +
+                    100px - var(--toolbar-start-end-padding) / 2
+            );
+        }
+    }
+}

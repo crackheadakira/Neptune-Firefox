@@ -1,8 +1,8 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		/* Browser */
-		--neptune-main-background: #383838;
-		--neptune-content-background: #262626;
+		--neptune-main-background: #1c1b22;
+		--neptune-content-background: #25242c;
 		--theme-primary-color: color-mix(in srgb, accentcolor 80%, #060606);
 		--theme-primary-hover-color: color-mix(in srgb, accentcolor 85%, #121212);
 		--theme-primary-active-color: color-mix(in srgb, accentcolor 85%, #565656);

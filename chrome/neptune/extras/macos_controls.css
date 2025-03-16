@@ -1,0 +1,134 @@
+/* Adds MacOS-like controls to the left side of the window, and hides your native window controls */
+
+@media (-moz-platform: macos) {
+    .titlebar-buttonbox-container {
+        position: absolute;
+        inset: calc(
+                var(--theme-browser-toolbox-padding) +
+                    (var(--urlbar-min-height) - 16px) / 2
+            )
+            auto auto 7px;
+    }
+}
+
+@media (-moz-platform: linux) or (-moz-platform: windows) {
+    .titlebar-buttonbox-container {
+        position: absolute;
+        inset: calc(
+                var(--theme-browser-toolbox-padding) +
+                    (var(--urlbar-min-height) - 12px) / 2
+            )
+            auto auto 16px;
+
+        :root[inFullscreen] & {
+            display: none !important;
+        }
+    }
+
+    .titlebar-button {
+        appearance: none !important;
+        padding-inline: 10px !important;
+        height: 12px;
+        width: 12px;
+    }
+
+    .titlebar-close {
+        order: -1;
+        list-style-image: url("../titlebuttons/titlebutton-close.svg") !important;
+
+        .titlebar-buttonbox:hover & {
+            list-style-image: url("../titlebuttons/titlebutton-close-hover.svg") !important;
+
+            &:active {
+                list-style-image: url("../titlebuttons/titlebutton-close-active.svg") !important;
+
+                @media (prefers-color-scheme: dark) {
+                    list-style-image: url("../titlebuttons/titlebutton-close-active-dark.svg") !important;
+                }
+            }
+        }
+    }
+
+    .titlebar-min {
+        list-style-image: url("../titlebuttons/titlebutton-minimize.svg") !important;
+
+        .titlebar-buttonbox:hover & {
+            list-style-image: url("../titlebuttons/titlebutton-minimize-hover.svg") !important;
+
+            &:active {
+                list-style-image: url("../titlebuttons/titlebutton-minimize-active.svg") !important;
+
+                @media (prefers-color-scheme: dark) {
+                    list-style-image: url("../titlebuttons/titlebutton-minimize-active-dark.svg") !important;
+                }
+            }
+        }
+    }
+
+    .titlebar-max {
+        list-style-image: url("../titlebuttons/titlebutton-maximize.svg") !important;
+
+        .titlebar-buttonbox:hover & {
+            list-style-image: url("../titlebuttons/titlebutton-maximize-hover.svg") !important;
+
+            &:active {
+                list-style-image: url("../titlebuttons/titlebutton-maximize-active.svg") !important;
+
+                @media (prefers-color-scheme: dark) {
+                    list-style-image: url("../titlebuttons/titlebutton-maximize-active-dark.svg") !important;
+                }
+            }
+        }
+    }
+
+    .titlebar-restore {
+        list-style-image: url("../titlebuttons/titlebutton-maximize.svg") !important;
+
+        .titlebar-buttonbox:hover & {
+            list-style-image: url("../titlebuttons/titlebutton-unmaximize-hover.svg") !important;
+
+            &:active {
+                list-style-image: url("../titlebuttons/titlebutton-unmaximize-active.svg") !important;
+
+                @media (prefers-color-scheme: dark) {
+                    list-style-image: url("../titlebuttons/titlebutton-unmaximize-active-dark.svg") !important;
+                }
+            }
+        }
+    }
+
+    .titlebar-button:-moz-window-inactive {
+        list-style-image: url("../titlebuttons/titlebutton-backdrop.svg") !important;
+
+        @media (prefers-color-scheme: dark) {
+            list-style-image: url("../titlebuttons/titlebutton-backdrop-dark.svg") !important;
+        }
+    }
+}
+
+@media (-moz-platform: linux) {
+    .titlebar-buttonbox-container {
+        position: absolute;
+        inset: calc(
+                var(--theme-browser-toolbox-padding) +
+                    (var(--urlbar-min-height) - 12px) / 2
+            )
+            auto auto 16px;
+
+        :root[inFullscreen] & {
+            display: none;
+        }
+    }
+
+    .titlebar-button {
+        appearance: none !important;
+        padding-inline: 10px !important;
+        height: 12px !important;
+        width: 12px !important;
+    }
+
+    .titlebar-button > .toolbarbutton-icon {
+        height: 12px !important;
+        width: 12px !important;
+    }
+}
